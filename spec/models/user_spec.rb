@@ -36,7 +36,25 @@ describe User do
   it 'knows its full name' do
     user = User.create(first_name: "Cernan", last_name: "Bernardo", email: "cernan@flatironschool.com")
 
-    expect(user.full_name).to eq("Cernan Bernardo") 
+    expect(user.full_name).to eq("Cernan Bernardo")
+  end
+
+  it 'is created with a default status of non-premium' do
+    user = User.create(first_name: "Cernan", last_name: "Bernardo", email: "cernan@flatironschool.com")
+
+    expect(user.status).to eq('Non-Premium')
+  end
+
+  describe 'associations' do
+    it 'has many carts' do
+      user = User.create(first_name: "Cernan", last_name: "Bernardo", email: "cernan@flatironschool.com")
+      cart = Cart.create
+      cart2 = Cart.create
+      user.carts << cart
+      user.carts << cart2
+    end
+
+    it 'has many items'
   end
 
 end

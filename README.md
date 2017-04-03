@@ -17,3 +17,9 @@ status
 Item
 name
 inventory
+
+Homework
+Create a test in cart_spec for an instance method called `checkout`
+- assign tht total of the cart to an attribute for the user called `total_spent`
+- reduces the inventory for each item in the cart by 1
+- changes the status of the cart from pending to submitted

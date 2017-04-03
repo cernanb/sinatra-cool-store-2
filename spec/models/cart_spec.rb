@@ -33,7 +33,6 @@ describe Cart do
         expect(cart.total).to eq(450)
       end
     end
-
   end
 
   describe 'associations' do
@@ -54,8 +53,27 @@ describe Cart do
 
       expect(@cart.items.size).to eq(2)
     end
-
   end
 
+	describe 'instance methods' do 
+		describe 'checkout' do 
+			it 'totals cart items and updates user.total_spent' do
+				# item1 = Item.create(name: 'iPhone', price: 250, inventory: 70)
+      	# item2 = Item.create(name: 'XBox', price: 200, inventory: 10)
 
+      	# @cart.items << item1
+      	# @cart.items << item2
+				# @user.total_spent = @cart.total
+				expect(@user.total_spent).to eq(450)
+			end
+		 	it 'reduces inventory for each cart item' do
+				qty = item2.qty
+				expect(item2.quantity).to eq(qty-1	)
+			end
+
+			it 'updates cart status from pending to submitted' do
+			
+			end
+		end
+	end
 end

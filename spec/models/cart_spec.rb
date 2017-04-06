@@ -6,7 +6,7 @@ describe Cart do
 	end
 
 	it 'is created with a default status of pending' do
-		expect(@cart.status).to eq('pending')
+		expect(@cart.status).to eq('pending') 
 	end
 
 	it 'knows if its status has changed' do

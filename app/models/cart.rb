@@ -14,7 +14,7 @@ class Cart < ActiveRecord::Base
 			user.save
 			item.save
 		end
-		user.save
+		user.save 
 		self.status = "submitted"
 	end
 end

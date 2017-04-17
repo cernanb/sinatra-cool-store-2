@@ -7,6 +7,10 @@ class Cart < ActiveRecord::Base
   end
 
   def checkout
-    status = 'submitted'
+    items.each do |item|
+      item.inventory -= 1
+    end
+    user.update_total_spent(total)
+    self.status = 'submitted'
   end
 end

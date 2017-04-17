@@ -5,4 +5,8 @@ class Cart < ActiveRecord::Base
   def total
     items.inject(0) { |sum, item| sum += item.price }
   end
+
+  def checkout
+    status = 'submitted'
+  end
 end
